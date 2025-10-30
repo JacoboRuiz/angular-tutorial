@@ -1,7 +1,24 @@
-<app-header></app-header>
+<div class="layout">
+  <app-header [username]="username"></app-header>
 
-<main class="app-main">
-  <h2>Esto pertenece al app-root</h2>
-</main>
+  <div class="content">
+    <app-sidebar></app-sidebar>
+    <app-home></app-home>
+  </div>
+  <h2>Contadores independientes</h2>
+  <div class="counters">
+    <app-counter (cambioContador)="actualizarContador1($event)"></app-counter>
+    <app-counter (cambioContador)="actualizarContador2($event)"></app-counter>
+    <app-counter (cambioContador)="actualizarContador3($event)"></app-counter>
+  </div>
+  <div class="resultados">
+    <p>Contador 1: {{ contador1 }}</p>
+    <p>Contador 2: {{ contador2 }}</p>
+    <p>Contador 3: {{ contador3 }}</p>
+  </div>
 
-<app-footer></app-footer>
+  <button (click)="cambiarTexto()">Cambiar texto del footer</button>
+  <app-footer [copyright]="copyright" (avisarAlPadre)="recibirAviso($event)"> </app-footer>
+
+  <h2>{{ mensajeDelHijo }}</h2>
+</div>

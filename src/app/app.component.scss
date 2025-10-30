@@ -2,17 +2,33 @@ $app-color-primary: #1976d2;
 $app-color-secundary: white;
 $app-font-family: Arial, Helvetica, sans-serif;
 
-.app-main {
-  background-color: $app-color-secundary;
-  color: $app-color-primary;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-  h2 {
-    font-family: $app-font-family;
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin: 0;
-  }
+.content {
+  display: flex;
+  flex: 1;
+  background-color: #f4f4f4;
+}
+
+app-sidebar {
+  width: 200px;
+  background: #e3e3e3;
+  padding: 1rem;
+}
+
+app-home {
+  flex: 1;
+  padding: 1rem;
+}
+
+app-header,
+app-footer {
+  background-color: #1976d2;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
