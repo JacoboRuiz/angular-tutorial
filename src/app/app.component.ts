@@ -4,12 +4,26 @@ import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { HomeComponent } from './core/home/home.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { CounterComponent } from './counter/counter.component';
+import { CounterSignalComponent } from './counter-signal/counter-signal.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { UsersDashboardComponent } from './users-dashboard/users-dashboard.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [HeaderComponent, SidebarComponent, HomeComponent, FooterComponent, CounterComponent],
+  imports: [
+    HeaderComponent,
+    SidebarComponent,
+    HomeComponent,
+    FooterComponent,
+    CounterComponent,
+    CounterSignalComponent,
+    UserListComponent,
+    ProductsListComponent,
+    UsersDashboardComponent,
+  ],
 })
 export class AppComponent {
   title = 'angular-tutorial';
