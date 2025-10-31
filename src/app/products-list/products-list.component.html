@@ -1,0 +1,33 @@
+<h2>Productos</h2>
+
+<label>
+  <input type="checkbox" [(ngModel)]="showOnlyInStock" />
+  Mostrar solo con stock
+</label>
+
+@for (product of products; track product.id) {
+  @if (!showOnlyInStock || product.stock > 0) {
+    <div class="card">
+      <div class="row">
+        <strong>{{ product.name }}</strong>
+        <span>{{ product.price }}</span>
+      </div>
+
+      <small>Stock: {{ product.stock }}</small>
+
+      @switch (product.status) {
+        @case ('new') {
+          <span class="badge badge-new">Nuevo</span>
+        }
+        @case ('sale') {
+          <span class="badge badge-sale">Oferta</span>
+        }
+        @default {
+          <span class="badge badge-neutral">-</span>
+        }
+      }
+    </div>
+  }
+} @empty {
+  <p>No hay productos</p>
+}

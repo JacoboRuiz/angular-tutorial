@@ -1,0 +1,19 @@
+<div class="user-list">
+  <h2>Lista de usuarios</h2>
+
+  <input [(ngModel)]="newUser" placeholder="Nuevo usuario" />
+  <button (click)="addUser()">Añadir</button>
+
+  <ul>
+    <li *ngFor="let user of users; let i = index">
+      {{ user }}
+      <button (click)="deleteUser(i)">Eliminar</button>
+    </li>
+  </ul>
+
+  <p *ngIf="users.length > 0; else noUsers">Hay {{ users.length }} usuarios registrados</p>
+
+  <ng-template #noUsers>
+    <p>No hay usuarios disponibles</p>
+  </ng-template>
+</div>

@@ -1,0 +1,15 @@
+<h2>Usuarios</h2>
+
+<input [(ngModel)]="newUser" placeholder="Nuevo usuario" />
+<button (click)="addUser()">Añadir</button>
+
+<ul>
+  @for (user of users(); track $index) {
+    <li>
+      {{ user }}
+      <button (click)="removeUser(user)">X</button>
+    </li>
+  } @empty {
+    <p>No hay usuarios registrados</p>
+  }
+</ul>
